@@ -1,3 +1,4 @@
+// Пузырьковая сортировка
 fun bubble_sort(arr: IntArray) {
     val n = arr.size
     // Проходим по всем элементам массива
