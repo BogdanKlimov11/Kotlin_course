@@ -1,24 +1,16 @@
-// Пузырьковая сортировка
 fun bubble_sort(arr: IntArray) {
-    val n = arr.size
-    // Проходим по всем элементам массива
-    for (i in 0 until n) {
-        // Установим флаг, который будет служить индикатором, были ли какие-либо обмены в этой итерации
-        var swapped = false
-        // Проходим по массиву сравнивая каждую пару соседних элементов
-        // и меняем их местами, если они находятся в неправильном порядке
-        for (j in 0 until n - i - 1) {
-            if (arr[j] > arr[j + 1]) {
-                // Обмен значениями
-                val temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
+    var n = arr.size
+    var swapped: Boolean
+    do {
+        swapped = false
+        for (i in 0 until n - 1) {
+            if (arr[i] > arr[i + 1]) {
+                val temp = arr[i]
+                arr[i] = arr[i + 1]
+                arr[i + 1] = temp
                 swapped = true
             }
         }
-        // Если в этой итерации не было ни одного обмена, то массив уже отсортирован
-        if (!swapped) {
-            break
-        }
-    }
+        n--
+    } while (swapped)
 }
